@@ -1,0 +1,155 @@
+$blue : #228be6;
+$gray: #495059;
+$pink: #f06595;
+@mixin button-color($color) {
+    background: $color;
+    &:hover {
+        background: darken($color, 10%);
+    }
+    &.outline {
+        color: $color;
+        background: none;
+        border: 1px solid $color;
+        &:hover {
+            background-color: $color;
+            color: #fff;
+        }
+    }
+}
+.Button {
+    color: white;
+    font-weight: bold;
+    outline: none;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    & + & {
+        margin-left: 10px;
+    }
+    // 사이즈 관리
+    &.large {
+        padding: 20px 30px;
+    }
+    &.medium {
+        padding: 10px 40px;
+    }
+    &.small {
+        padding: 5px 30px;
+    }
+
+    // 색상관리
+    &.blue {
+        @include button-color($blue);
+    }
+    &.pink {
+        @include button-color($pink);
+    }
+    &.gray {
+        @include button-color($gray);
+    }
+    &.fullWidth {
+        width: 100%;
+        & + & {
+            margin-left: 0;
+            margin-top: 10px;
+        }
+    }
+}
+
+// #blueBtn {
+//     .Button {
+//         background: $blue;
+//         &:hover {
+//             // background: lighten($blue, 40%); // 색상 40% 밝게
+//             background: darken($blue, 10%); // 색상 40% 어둡게
+//         }
+//     }
+//     margin-bottom: 20px;
+// }
+// #blackBtn {
+//     .Button {
+//         background: black;
+//         &:hover {
+//             // background: lighten($blue, 40%); // 색상 40% 밝게
+//             background: lighten(black, 30%); // 색상 40% 어둡게
+//         }
+//     }
+//     margin-bottom: 20px;
+// }
+// #pinkBtn {
+//     .Button {
+//         background-color: deeppink;
+//         &:hover {
+//             // background: lighten($blue, 40%); // 색상 40% 밝게
+//             background: darken(deeppink, 10%); // 색상 40% 어둡게
+//         }
+//     }
+//     margin-bottom: 20px;
+// }
+// #whiteBtn {
+//     .Button {
+//         background: white;
+//         border: 2px solid deeppink;
+//         color: deeppink;
+//     }
+//     .large {
+//         border: 2px solid $blue;
+//         color: $blue;
+//         &:hover {
+//             // background: lighten($blue, 40%); // 색상 40% 밝게
+//             background: $blue; // 색상 40% 어둡게
+//             color: white;
+//         }
+//     }
+//     .medium {
+//         border: 2px solid black;
+//         color: black;
+//         &:hover {
+//             // background: lighten($blue, 40%); // 색상 40% 밝게
+//             background: black; // 색상 40% 어둡게
+//             color: white;
+//         }
+//     }
+//     .small {
+//         &:hover {
+//             // background: lighten($blue, 40%); // 색상 40% 밝게
+//             background: deeppink; // 색상 40% 어둡게
+//             color: white;
+//         }
+//     }
+//     margin-bottom: 20px;
+// }
+// #longBtn {
+//     display: flex;
+//     flex-direction: column;
+//     .blue {
+//         background-color: $blue;
+//         padding: 10px 30px;
+//         font-size: 28px;
+//         margin-bottom: 20px;
+//         &:hover {
+//             // background: lighten($blue, 40%); // 색상 40% 밝게
+//             background: darken($blue, 10%); // 색상 40% 어둡게
+//         }
+//     }
+//     .black {
+//         background-color: black;
+//         padding: 10px 30px;
+//         font-size: 28px;
+//         margin-bottom: 20px;
+//         &:hover {
+//             // background: lighten($blue, 40%); // 색상 40% 밝게
+//             background: lighten(black, 30%); // 색상 40% 어둡게
+//         }
+//     }
+//     .pink {
+//         background-color: deeppink;
+//         padding: 10px 30px;
+//         font-size: 28px;
+//         &:hover {
+//             // background: lighten($blue, 40%); // 색상 40% 밝게
+//             background: darken(deeppink, 10%); // 색상 40% 어둡게
+//         }
+//     }
+// }
